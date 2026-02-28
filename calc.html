@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pastel Scientific Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="calc.css">
+
+</head>
+<body>
+
+<div class="calculator">
+
+    <div id="modeLetter" class="mode-letter">M</div>
+    <div class="top-bar">
+        
+        <button class="toggle" onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <div class="display">
+        <div id="expression" class="expression"></div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="buttons">
+
+        <!-- Scientific (Advanced Mode Only) -->
+        <button class="advanced" onclick="sin()">sin</button>
+        <button class="advanced" onclick="cos()">cos</button>
+        <button class="advanced" onclick="tan()">tan</button>
+        <button class="advanced" onclick="log()">log</button>
+
+        <button class="advanced" onclick="squareRoot()">√</button>
+        <button class="advanced" onclick="setOperator('^')">xʸ</button>
+        <button class="advanced" onclick="factorial()">n!</button>
+
+        <button onclick="clearAll()" class="danger">C</button>
+
+        <!-- Numbers -->
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="setOperator('÷')" class="operator">÷</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="setOperator('×')" class="operator">×</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="setOperator('-')" class="operator">−</button>
+
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="setOperator('+')" class="operator">+</button>
+
+    </div>
+
+</div>
+
+<script src="calc.js"></script>
+</body>
+</html>

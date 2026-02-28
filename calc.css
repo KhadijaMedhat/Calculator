@@ -1,0 +1,163 @@
+* { box-sizing: border-box; }
+
+/* 🌸 Light Mode */
+:root {
+    --bg: linear-gradient(135deg,#f8f5ff,#eef2ff);
+    --calc-bg: #fdfaff;
+    --display-bg: #f3f4f6;
+    --text: #333;
+
+    --btn: #e9d5ff;
+    --btn-hover: #d8b4fe;
+
+    --operator: #c7f0e9;
+    --operator-hover: #a8e6d7;
+
+    --equal: #bbf7d0;
+    --equal-hover: #86efac;
+
+    --danger: #fecdd3;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+    --bg: linear-gradient(135deg,#1e1e2f,#141420);
+    --calc-bg: #2a2a3d;
+    --display-bg: #1f1f2e;
+    --text: #f3f4f6;
+
+    --btn: #3f3f5e;
+    --btn-hover: #56567a;
+
+    --operator: #2f4f4f;
+    --operator-hover: #3b6b6b;
+
+    --equal: #065f46;
+    --equal-hover: #047857;
+
+    --danger: #7f1d1d;
+}
+body.dark .advanced {
+    display: none;
+}
+.mode-letter {
+    position: absolute;
+    top: 12px;
+    left: 18px;   /* يخليه على طرف الآلة */
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    opacity: 0.18;
+    pointer-events: none;
+    transition: 0.3s;
+}
+body {
+    background: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+    transition: 0.3s;
+}
+
+.calculator {
+    position: relative;   
+    background: var(--calc-bg);
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.toggle {
+    background: var(--btn);
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.display {
+    background: var(--display-bg);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: right;
+    color: var(--text);
+}
+
+.expression {
+    font-size: 14px;
+    opacity: 0.7;
+    min-height: 18px;
+}
+
+.result {
+    font-size: 30px;
+    font-weight: bold;
+    min-height: 36px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+}
+
+button {
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background: var(--btn);
+    color: var(--text);
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+.operator {
+    background: var(--operator);
+}
+
+.operator:hover {
+    background: var(--operator-hover);
+}
+
+.equal {
+    background: var(--equal);
+}
+
+.equal:hover {
+    background: var(--equal-hover);
+}
+
+.danger {
+    background: var(--danger);
+    color: white;
+}
+@media (max-width: 480px) {
+    .calculator {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
